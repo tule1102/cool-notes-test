@@ -8,6 +8,7 @@ async function fetchData(input: RequestInfo, init?: RequestInit) {
         return response;
     } else {
         const errorBody = await response.json();
+        console.log('errorBody:', errorBody); // Debugging statement
         const errorMessage = errorBody.error;
         if (response.status === 401) {
             throw new UnauthorizedError(errorMessage);
