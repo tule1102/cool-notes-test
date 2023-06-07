@@ -37,6 +37,7 @@ export async function signUp(credentials: SignUpCredentials): Promise<User> {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
+                 'X-Requested-With': 'XMLHttpRequest'
             },
             body: JSON.stringify(credentials),
         });
